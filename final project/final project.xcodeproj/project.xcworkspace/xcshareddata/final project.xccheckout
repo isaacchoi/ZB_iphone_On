@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>3FBCDE20-397D-435A-A456-BEFD2C7061EF</string>
+	<key>IDESourceControlProjectName</key>
+	<string>final project</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>CF9E1786-0E51-4B95-974E-6B75F36F50DA</key>
+		<string>https://github.com/isaacchoi/ZB_iphone_On.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>final project/final project.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>CF9E1786-0E51-4B95-974E-6B75F36F50DA</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/isaacchoi/ZB_iphone_On.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>CF9E1786-0E51-4B95-974E-6B75F36F50DA</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>CF9E1786-0E51-4B95-974E-6B75F36F50DA</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ZB_iphone_On</string>
+		</dict>
+	</array>
+</dict>
+</plist>
