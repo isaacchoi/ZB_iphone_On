@@ -40,4 +40,11 @@
     return client;
 }
 
+-(void)clientLog
+{
+    for (Client *newClient in self.clients) {
+        NSLog(@"Name:%@ Mac Address:%@ Message:%@", newClient.name, newClient.macAddress, [newClient.message objectAtIndex:0]);
+    }
+}
+
 @end

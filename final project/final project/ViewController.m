@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *textMacAaddress;
 //@property (strong,nonatomic) website *newSubmission;
 @property (strong,nonatomic) clientList *list;
+@property (weak, nonatomic) IBOutlet UIPickerView *MacAddressSelection;
 @end
 
 @implementation ViewController
@@ -39,6 +40,8 @@
     [self.list addClient:newClient];
 }
 
-
+- (IBAction)clientLog:(id)sender {
+    [self.list clientLog];
+}
 
 @end

@@ -14,5 +14,5 @@
 -(void)addClient:(Client *)client;
 
 -(Client *)findClient:(NSString *)clientMacAddress;
-
+-(void)clientLog;
 @end
