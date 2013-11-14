@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "clientList.h"
 
-NSString *const computerFanNode = @"0";
+NSString *const computerFanNode = @"0013a200";
 NSString *const LampNode = @"1";
 NSString *const sangBtNode = @"3";
 NSString *const sangRNode = @"4";
@@ -18,7 +18,10 @@ NSString *const sangRNode = @"4";
 @property (weak, nonatomic) IBOutlet UITextField *textMessage;
 @property (weak, nonatomic) IBOutlet UITextField *textMacAaddress;
 @property (strong,nonatomic) website *newSubmission;
+@property (strong,nonatomic) NSMutableArray *receiveData;
 //@property (strong,nonatomic) clientList *list;
+@property (weak, nonatomic) IBOutlet UIPickerView *bluetoothPickerView;
+@property (weak, nonatomic) IBOutlet UILabel *SubmissionIndicate;
 @end
 
 @implementation ViewController
@@ -29,10 +32,17 @@ NSString *const sangRNode = @"4";
     return _newSubmission;
 }
 
+-(NSMutableArray *)receiveData
+{
+    if (!_receiveData) _receiveData = [[NSMutableArray alloc] initWithCapacity:0];
+    return _receiveData;
+}
+
 -(void)viewDidLoad
 {
     [super viewDidLoad];
     mgr = [[CBCentralManager alloc] initWithDelegate:self queue:nil];
+    
 }
 
 //-(clientList *)list
@@ -43,19 +53,20 @@ NSString *const sangRNode = @"4";
 
 - (IBAction)submitNewMessage:(id)sender {
  
-    [self.newSubmission thisNodeId:sangBtNode changeMessage:self.textMacAaddress.text];
-    [self.newSubmission thisNodeId:sangRNode changeMessage:self.textMessage.text];
-
-//    Client *newClient = [[Client alloc] init];
-//    [newClient addClientMacAddress:self.textMacAaddress.text clientName:self.textName.text clientMessage:self.textMessage.text];
-//    [self.list addClient:newClient];
+    if ([self.newSubmission thisNodeId:sangBtNode changeMessage:self.textMacAaddress.text] && [self.newSubmission thisNodeId:sangRNode changeMessage:self.textMessage.text])
+    {
+        [self.SubmissionIndicate setText:@"Submit Successful"];
+    }
+    else
+        [self.SubmissionIndicate setText:@"Submit Failed"];
+    
+    
 }
 
-//
-//- (IBAction)clientLog:(id)sender {
-//    [self.list clientLog];
-//}
-
+- (IBAction)clientLog:(id)sender {
+     NSURL *URL = [NSURL URLWithString:@"http://www.knowplace.cc/mydata?action=getDataEmbedded&api_key=api_key_sang"] ;
+    [self.newSubmission retrieveMessage:URL];
+}
 
 - (void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI
 {
@@ -125,7 +136,7 @@ NSString *const sangRNode = @"4";
             break;
         }
     }
-    NSLog(@"this work");
+    //NSLog(@"this work");
 }
 
 - (void) startScan

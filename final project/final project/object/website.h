@@ -11,7 +11,7 @@
 @interface website : NSObject
 //@property (strong,nonatomic)NSURLRequest *theRequest;
 
--(void)thisNodeId:(NSString *)nodeId changeMessage:(NSString *)message;
--(NSString *)retrieveMessage:(NSString *)macAddress;
+-(BOOL)thisNodeId:(NSString *)nodeId changeMessage:(NSString *)message;
+-(NSArray *)retrieveMessage:(NSURL *)URL;
 
 @end

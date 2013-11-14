@@ -16,9 +16,6 @@
     CBPeripheral *per;
 }
 
-//@property (strong,nonatomic) CBCentralManager *mgr;
-//@property (strong,nonatomic) CBPeripheral *per;
-
 - (void) startScan;
 
 @end
